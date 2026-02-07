@@ -1,0 +1,10 @@
+This project is a replacement for Kyutai's STT for unmute, with Kroko ASR.
+The goal is to use unmute for low latency voice assistant, but with much lower resources than original unmute and its resource-hungry STT/TTS.
+
+A feature of Kyutai's STT is end of turn detection, which Kroko ASR lacks.
+Instead, we use a simple rule based on time of latest output token.
+Unmute handles being interrupted, so even if the user pauses, the seamless conversation survives.
+It is likely to reduce seamless-ness and increase (worsen) voice-to-voice latency.
+
+You can run this with `uv run serve.py`.
+Default model is the FR openweight one. To select another, edit the source code
